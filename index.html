@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Music Player</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background"></div>
+  <div class="player">
+    <div class="cover-container">
+      <img src="" alt="cover" id="cover">
+    </div>
+    <div class="song-info">
+      <h2 id="title">Title</h2>
+      <h4 id="artist">Artist</h4>
+    </div>
+
+    <audio id="audio"></audio>
+
+    <div class="controls">
+      <button onclick="prevSong()">⏮️</button>
+      <button id="play" onclick="playPause()">▶️</button>
+      <button onclick="nextSong()">⏭️</button>
+    </div>
+
+    <div class="extras">
+      <button onclick="toggleShuffle()">🔀</button>
+      <button onclick="toggleRepeat()">🔁</button>
+    </div>
+
+    <div class="progress-container" onclick="setProgress(event)">
+      <div class="progress" id="progress"></div>
+    </div>
+    <div class="time">
+      <span id="current">0:00</span>
+      <span id="duration">0:00</span>
+    </div>
+
+    <input type="range" id="volume" min="0" max="1" step="0.01" onchange="changeVolume(this.value)" />
+
+    <ul id="playlist"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
